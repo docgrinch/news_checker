@@ -1,0 +1,11 @@
+services:
+  news-checker:
+    build: .
+    image: news-checker:latest
+    container_name: news-checker
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      REFRESH_MINUTES: "30"
+      PER_FEED: "8"
